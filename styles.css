@@ -79,3 +79,14 @@ p{
     text-align: center;
     box-sizing: border-box;
 }
+#input_content{
+    resize: none;
+}
+#addForm{
+    display: flex;
+    flex-direction: column;
+}
+#FormDiv{
+    display: flex;
+    justify-content: center;
+}
