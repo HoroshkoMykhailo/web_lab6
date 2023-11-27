@@ -14,21 +14,21 @@ function addToast(index) {
     var toast = document.createElement('div');
     toast.className = 'toast';
 
+    var toasts = document.querySelector(".toasts");
 
     var closeButton = document.createElement('button');
     closeButton.className = 'close-button';
-    closeButton.innerHTML = '&times;'; // Use '×' for a close symbol
+    closeButton.innerHTML = '&times;';
     closeButton.onclick = function() {
-      document.body.removeChild(toast);
-      list.slice(index, 1);
+      toasts.removeChild(toast);
+      list.splice(index, 1);
       save_to_server(list);
     };
 
-    toast.innerText = "<p>" + list[index] + "</p>";
+    toast.innerHTML = "<p>" + list[index] + "</p>";
 
     toast.appendChild(closeButton);
-
-    var toasts = document.querySelector(".toasts");
+    
     toasts.appendChild(toast);
 }
 let list = [];

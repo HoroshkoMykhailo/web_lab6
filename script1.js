@@ -19,7 +19,6 @@ function add(){
     list.push(text);
     textarea.value = '';
     save_to_server(list);
-    alert(list);
 }
 async function save_to_server(list){
     let to_save = JSON.stringify(list);
