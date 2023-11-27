@@ -94,3 +94,29 @@ p{
     display: flex;
     justify-content: center;
 }
+.toasts{
+    display: flex;
+    flex-wrap: wrap;
+}
+.toast {
+    width: fit-content;
+    background-color: #333;
+    color: #fff;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.toast>p{
+    margin: 15px;
+    margin-right: 0px;
+}
+.close-button {
+  margin: 0px;
+  margin-top: -20px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  color: #fff;
+}
