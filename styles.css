@@ -93,6 +93,10 @@ p{
 #FormDiv{
     display: flex;
     justify-content: center;
+    text-align: left;
+}
+#order{
+    width: 40px;
 }
 .toasts{
     display: flex;
@@ -103,6 +107,7 @@ p{
 }
 .toast {
     width: fit-content;
+    height: fit-content;
     background-color: #333;
     color: #fff;
     border-radius: 10px;

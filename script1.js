@@ -6,10 +6,15 @@ function ifenter(e){
 async function update(){
     list = [];
     await load();
+
+    document.getElementById("order").max = list.length + 1;
 }
 let list = [];
 document.addEventListener("DOMContentLoaded", async function () {
     await load();
+
+    document.getElementById("order").max = list.length + 1;
+
     document.getElementById("add_object").onclick = add;
 });
 async function load(){
@@ -20,7 +25,13 @@ document.body.onkeydown = ifenter;
 function add(){
     var textarea = document.getElementById("input_content")
     var text = textarea.value;
-    list.push(text);
+
+    let order = document.getElementById("order").value
+    list.splice(order - 1, 0, text);
+
+    document.getElementById("order").max = list.length + 1;
+
+
     textarea.value = '';
     save_to_server(list);
 }
