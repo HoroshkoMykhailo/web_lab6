@@ -9,6 +9,15 @@ async function save_to_server(list){
         body: to_save
     })
 }
+async function update(){
+    let toasts = document.querySelector(".toasts");
+    list = [];
+    await load();
+    toasts.innerHTML = '';
+    for (var i = 0; i < list.length; i++){
+        addToast(i);
+    }
+}
 function addToast(index) {
 
     var toast = document.createElement('div');
@@ -32,9 +41,5 @@ function addToast(index) {
     toasts.appendChild(toast);
 }
 let list = [];
-document.addEventListener("DOMContentLoaded", async function () {
-    await load();
-    for (var i = 0; i < list.length; i++){
-        addToast(i);
-    }
-});
+document.addEventListener("DOMContentLoaded", update);
+setInterval(update, 5000);

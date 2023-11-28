@@ -3,6 +3,10 @@ function ifenter(e){
         e.preventDefault();
     }
 }
+async function update(){
+    list = [];
+    await load();
+}
 let list = [];
 document.addEventListener("DOMContentLoaded", async function () {
     await load();
@@ -27,3 +31,4 @@ async function save_to_server(list){
         body: to_save
     })
 }
+setInterval(update, 5000);
